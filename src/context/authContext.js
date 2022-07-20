@@ -55,6 +55,20 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  //* Đăng kí tài khoản
+  const handleRegisterAccount = async (value) => {
+    try {
+      const response = await axios.post(`${apiUrl}/register`, value);
+      if (response.data.success) {
+        localStorage.setItem("managementTask", response.data.accessToken);
+      }
+      await verifyAccount();
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  };
+
   //* Đăng xuất tài khoản
   const handleLogout = async () => {
     localStorage.removeItem("managementTask");
@@ -66,7 +80,12 @@ const AuthContextProvider = ({ children }) => {
     await verifyAccount();
   };
 
-  const authContextData = { handleLoginAccount, handleLogout, authState };
+  const authContextData = {
+    handleLoginAccount,
+    handleRegisterAccount,
+    handleLogout,
+    authState,
+  };
   return (
     <AuthContext.Provider value={authContextData}>
       {children}
