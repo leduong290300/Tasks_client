@@ -86,12 +86,12 @@ export default function Register() {
       return;
     }
     try {
-      const data = await handleRegisterAccount(
+      const data = await handleRegisterAccount({
         firstName,
         lastName,
         email,
         password,
-      );
+      });
       if (!data.success) {
         setShowToats(true);
         setMessageToats(data.message);
