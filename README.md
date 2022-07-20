@@ -12,5 +12,5 @@ Open [https://lucent-moxie-52417f.netlify.app/]
 ![register](https://user-images.githubusercontent.com/80597229/179952694-7eb4111e-80d4-4477-9df3-245568b35fe1.png)
 ***
 
-> DB
+> Database 
 ![relationship](https://user-images.githubusercontent.com/80597229/179952854-3f6a3428-d54d-4277-93e2-f53341dc55e3.png)
